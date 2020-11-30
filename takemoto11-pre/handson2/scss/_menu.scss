@@ -1,0 +1,65 @@
+.menu-wrap {
+    display: flex;
+    justify-content: space-between;
+    @include tab {
+        flex-direction: column;
+    }
+}
+
+.menu-item {
+    width: 25%;
+    @include tab {
+        width: 100%;
+        text-align: center;
+    }
+
+    &_img {
+        overflow: hidden;
+        @include sp {
+            display: none;
+        }
+    }
+
+    &_desc {
+        font-size: 1.6rem;
+        padding: 0 10px;
+        letter-spacing: 1.6px;
+        @include tab {
+            padding: 0 10% 60px;
+        }
+        @include sp {
+            padding: 30px 0 50px 15px;
+        }
+    }
+
+    h3 {
+        margin: 35px 0;
+        font-size: 3rem;
+        text-align: center;
+        min-width: 225px;
+        letter-spacing: 3px;
+        @include sp {
+            text-align: left;
+            margin-top: 0;
+        }
+    }
+
+    p {
+        line-height: 1.6;
+        @include sp {
+            text-align: left;
+            padding-right: 24px;
+        }
+    }
+
+    h4 {
+        text-align: right;
+        margin-top: 35px;
+        @include sp {
+            margin-top: 25px;
+        }
+    }
+
+    
+
+}
