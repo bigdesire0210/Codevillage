@@ -18,6 +18,13 @@
         @include sp {
             display: none;
         }
+        &-2 {
+            display: none;
+            @include sp {
+                display: block;
+                margin: 0 auto;
+            }
+        }
     }
 
     &_desc {

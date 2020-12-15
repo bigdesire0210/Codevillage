@@ -1,6 +1,9 @@
 .first-v {
     height: 800px;
     position: relative;
+    @include sp {
+        height: 600px;
+    }
     &_img {
         position: absolute;
         background-image: url(../img/component.png);
@@ -15,7 +18,7 @@
         @include sp {
             background-image: url(../img/component-6.png);
             width: 100%;
-            background-size: contain;
+            background-size: 400 auto;
         }
     }
 
@@ -37,7 +40,7 @@
         }
         @include sp {
             position: absolute;
-            top: 30%;
+            top: 35%;
             left: 25%;
             flex-direction: column-reverse;
         }

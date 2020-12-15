@@ -230,6 +230,9 @@ nav li:first-child {
 .first-v {
   height: 800px;
   position: relative; }
+@media screen and (max-width: 600px) {
+  .first-v {
+    height: 600px; } }
 .first-v_img {
   position: absolute;
   background-image: url(../img/component.png);
@@ -242,7 +245,7 @@ nav li:first-child {
   .first-v_img {
     background-image: url(../img/component-6.png);
     width: 100%;
-    background-size: contain; } }
+    background-size: 400 auto; } }
 .first-v_wrap {
   position: absolute;
   font-size: 3.8rem;
@@ -262,7 +265,7 @@ nav li:first-child {
 @media screen and (max-width: 600px) {
   .first-v_wrap {
     position: absolute;
-    top: 30%;
+    top: 35%;
     left: 25%;
     flex-direction: column-reverse; } }
 .first-v_wrap .catch {
@@ -386,6 +389,12 @@ nav li:first-child {
 @media screen and (max-width: 600px) {
   .menu-item_img {
     display: none; } }
+.menu-item_img-2 {
+  display: none; }
+@media screen and (max-width: 600px) {
+  .menu-item_img-2 {
+    display: block;
+    margin: 0 auto; } }
 .menu-item_desc {
   font-size: 1.6rem;
   padding: 0 10px;
