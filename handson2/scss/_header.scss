@@ -109,7 +109,7 @@ nav {
         transform: translateX(100vw);
         transition: all .7s;
         background-color: white;
-        &-ul {
+        .ham-ul {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -117,22 +117,45 @@ nav {
             width: 100vw;
             height: 100vh;
         }
-        &-list {
+        .ham-list {
             // @include rem(16);
             list-style: none;
             text-align: center;
         }
-        &-list + &-list {
+        .ham-list + .ham-list {
             text-decoration: none;
             color: white;
         }
     }
 }
 
-// activeをつけたらスライドいん
-.ham-menu.active {
-    transform: translateX(0);
+//動き
+.fadein {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%)
 }
+
+.linea,.lineb,.linec {
+    background: ffffff;
+}
+
+.linea {
+    -webkit-transform: rotate(225deg);
+    transform: rotate(225deg);
+    top:13px
+}
+
+.lineb {
+    opacity: 0;
+}
+
+.linec {
+    -webkit-transform: rotate(-225deg);
+    transform: rotate(-225deg);
+    top: 13px;
+}
+
+
 
 // .l-drawer {
 //     z-index: 1;

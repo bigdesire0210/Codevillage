@@ -21,6 +21,7 @@
         &-2 {
             display: none;
             @include sp {
+                width: 280px;
                 display: block;
                 margin: 0 auto;
             }

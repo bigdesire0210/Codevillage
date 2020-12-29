@@ -210,22 +210,39 @@ nav li:first-child {
     transform: translateX(100vw);
     transition: all .7s;
     background-color: white; }
-  .ham-menu-ul {
+  .ham-menu .ham-ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100vw;
     height: 100vh; }
-  .ham-menu-list {
+  .ham-menu .ham-list {
     list-style: none;
     text-align: center; }
-  .ham-menu-list + .ham-menu-list {
+  .ham-menu .ham-list + .ham-list {
     text-decoration: none;
     color: white; } }
 
-.ham-menu.active {
-  transform: translateX(0); }
+.fadein {
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%); }
+
+.linea, .lineb, .linec {
+  background: ffffff; }
+
+.linea {
+  -webkit-transform: rotate(225deg);
+  transform: rotate(225deg);
+  top: 13px; }
+
+.lineb {
+  opacity: 0; }
+
+.linec {
+  -webkit-transform: rotate(-225deg);
+  transform: rotate(-225deg);
+  top: 13px; }
 
 .first-v {
   height: 800px;
@@ -279,7 +296,8 @@ nav li:first-child {
     letter-spacing: 2.3px;
     text-shadow: 0px 3px 16px #000000;
     margin-bottom: 0px;
-    margin-right: 50px; } }
+    margin-right: 50px;
+    min-width: 200px; } }
 .first-v_wrap .catch-en {
   margin-left: -56px;
   letter-spacing: 3.8px;
@@ -345,7 +363,7 @@ nav li:first-child {
   font-family: "ヒラギノ明朝 Pro";
   width: 445px;
   letter-spacing: 16px;
-  min-width: 400px;
+  min-width: 300px;
   margin-top: 20px; }
 @media screen and (max-width: 959px) {
   .concept-catch {
@@ -362,7 +380,7 @@ nav li:first-child {
   line-height: 1.6;
   width: 34vw;
   letter-spacing: 1.6px;
-  min-width: 360px; }
+  min-width: 280px; }
 @media screen and (max-width: 959px) {
   .concept-text {
     width: 100%;
@@ -393,6 +411,7 @@ nav li:first-child {
   display: none; }
 @media screen and (max-width: 600px) {
   .menu-item_img-2 {
+    width: 280px;
     display: block;
     margin: 0 auto; } }
 .menu-item_desc {
