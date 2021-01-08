@@ -34,6 +34,12 @@ header {
     letter-spacing: 1.8px;
 }
 
+.hover:hover {
+    background-color: white;
+    cursor: pointer;
+}
+
+
 nav {
     @include tab {
         display: none;
@@ -54,79 +60,129 @@ nav {
         }
 }
 
-.ham {
-    display: none;
-    position: relative;
-    cursor: pointer;
+// .ham {
+//     display: none;
+//     position: relative;
+//     cursor: pointer;
 
+    // @include tab {
+    //     width: 25px;
+    //     height: 15px;
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: space-between;
+    //     -webkit-transform: 1.5s;
+    //     transition: 1.5s;
+    //     span {
+    //         width: 100%;
+    //         height: 1px;
+    //         background-color: white;
+    //         display: inline-block;
+    //         &:last-child {
+    //             width: 60%;
+    //         }    
+    //     }
+    //     @include sp {
+    //         span {
+    //             background-color: black;
+    //         }
+    //     }
+    // }
+// }
+
+#target {
+    width: 25px;
+    height: 15px;
+    position: absolute;
+    top: 40px;
+    right: 25px;
+    cursor: pointer;
+    display: block;
+    -webkit-transition: 1.5s;
+    transition: 1.5s;
+    @include sp {
+        top: 20px;
+    }
+}
+
+.target_inner {
     @include tab {
         width: 25px;
         height: 15px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        span {
-            width: 100%;
-            height: 1px;
-            background-color: white;
-            display: inline-block;
-            &:last-child {
-                width: 60%;
-            }    
-        }
+        position: relative;
+    }
+}
+
+.target_inner_line {
+    @include tab {
+        display: block;
+        width: 25px;
+        height: 1px;
+        -webkit-transition: 1.5s;
+        transition: 1.5s;
+        position: absolute;
+        background: white;
         @include sp {
-            span {
-                background-color: black;
-            }
+            background: black;
         }
     }
 }
 
-.ham-btn.active {
-    .ham-btn_parts {
-        &__top {
-            transform: translateY(10px) rotate(-45deg);
-        }
-        &__middle {
-            opacity: 0;
-        }
-        &__bottom {
-            transform: translateY(-4px) rotate(45deg);
-        }
+.target_inner_1 {
+    @include tab {
+        top: 0;
     }
 }
+.target_inner_2 {
+    @include tab {
+        top: 6px;
+    }
+}
+.target_inner_3 {
+    @include tab {
+        top: 13px;
+    }
+}
+
 
 // スライドメニュー
 .ham-menu {
     display: none;
     @include tab {
         display: block;
-        position: fixed;
-        z-index: 11;
-        top: 0;
-        width: 100vw;
+        position: absolute;
+        width: 100%;
         height: 100vh;
-        transform: translateX(100vw);
-        transition: all .7s;
-        background-color: white;
-        .ham-ul {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100vw;
-            height: 100vh;
-        }
-        .ham-list {
-            // @include rem(16);
-            list-style: none;
-            text-align: center;
-        }
-        .ham-list + .ham-list {
-            text-decoration: none;
-            color: white;
-        }
+        left: -100%;
+        background: rgba(99, 99, 99, 95);
+        transition: 1.5s;
+        -webkit-transition: 1.5s;
+        z-index: 1;
     }
+}
+
+// .pfix {
+//     width: 100%;
+//     position: fixed;
+// }
+
+.tabul {
+    margin: 0;
+    padding: 0;
+}
+
+.tabmenu {
+    height: calc(100vh/5);
+    line-height: 187.39px;
+    list-style-type: none;
+    font-size: 5rem;
+    text-align: center;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: white;
 }
 
 //動き
@@ -136,7 +192,10 @@ nav {
 }
 
 .linea,.lineb,.linec {
-    background: ffffff;
+    background: #ffffff;
+    @include sp {
+        background: black;
+    }
 }
 
 .linea {
@@ -145,128 +204,13 @@ nav {
     top:13px
 }
 
-.lineb {
+.linec {
     opacity: 0;
 }
 
-.linec {
+.lineb {
     -webkit-transform: rotate(-225deg);
     transform: rotate(-225deg);
     top: 13px;
 }
 
-
-
-// .l-drawer {
-//     z-index: 1;
-//     &__checkbox {
-//         display: none;
-//     }
-//     @include tab {
-//         position: relative;
-//         // inputのcheckboxは非表示
-//         &__checkbox {
-//             display: none;
-//         }
-//         // ハンバーガーメニュー
-//         &__icon {
-//             cursor: pointer;
-//             display: block;
-//             width: 25px;
-//             height: 15px;
-//             position: fixed;
-//             right: 30px;
-//             &-parts,
-//             &-parts:before,
-//             &-parts:after {
-//                 background-color: #000;
-//                 display: block;
-//                 width: 25px;
-//                 height: 2px;
-//                 position: absolute;
-//                 top: 0;
-//                 right: 0;
-//                 left: 0;
-//                 bottom: 0;
-//                 margin: auto;
-//             }
-//             &-parts:before,
-//             &-parts:after {
-//                 content: " ";
-//             }
-//             &-parts:before {
-//                 top: 12px;
-//             }
-//             &-parts:after {
-//                 top: -12px;
-//             }
-//         }
-//         &__overlay {
-//             background: #000;
-//             opacity: 0;
-//             // display: none; //opacity: 0;で非表示はできているため、display: none;は削除
-//             pointer-events: none; //ポインタの動作全部無効化
-//             width: 100%;
-//             height: 100%;
-//             position: fixed;
-//             top: 0;
-//             right: 0;
-//         }
-//         &__menu {
-//             background: #ffffff;
-//             color: #000;
-//             max-width: 100%;
-//             width: 500px;
-//             height: 100vh;
-//             overflow-y: auto; //スクロール
-//             -webkit-overflow-scrolling: touch; //スクロール（SP)
-//             position: fixed;
-//             top: 0;
-//             right: -500px;
-//         }
-//         &__icon {
-//             z-index: 4;
-//         }
-//         &__menu {
-//             z-index: 3;
-//         }
-//         &__overlay {
-//             z-index: 2;
-//         }
-
-//         //チェックが入ったら（アイコンクリックしたら）
-//         &__checkbox:checked ~ {
-//             //ハンバーガーアイコン
-//             .l-drawer__icon {
-//                 .l-drawer__icon-parts {
-//                     background: transparent;
-//                 }
-//                 .l-drawer__icon-parts:before {
-//                     -webkit-transform: rotate(-45deg);
-//                     transform: rotate(-45deg);
-//                     top: 0;
-//                 }
-//                 .l-drawer__icon-parts:after {
-//                     -webkit-transform: rotate(45deg);
-//                     transform: rotate(45deg);
-//                     top: 0;
-//                 }
-//             }
-//             //メインエリアを暗くする
-//             .l-drawer__overlay {
-//                 opacity: 0.3;
-//                 pointer-events: auto; //ポインタの動作デフォルトに戻す
-//             }
-//             //メニューを出す
-//             .l-drawer__menu {
-//                 right: 0;
-//             }
-//         }
-//         //動きをスムーズに
-//         &__icon-parts, &__icon-parts:before,
-//         &__icon-parts:after, &__overlay, &__menu{
-//             -webkit-transition: all 0.7s;
-//             transition: all 0.7s;
-//         }
-//     }
-// }
