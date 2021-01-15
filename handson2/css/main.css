@@ -158,16 +158,16 @@ header {
   cursor: pointer; }
 
 @media screen and (max-width: 959px) {
-  nav {
+  .pc-navmenu {
     display: none; } }
-nav ul {
+.pc-navmenu .pc-ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: #707070; }
-nav li {
+.pc-navmenu .hover {
   margin-left: 20px; }
-nav li:first-child {
+.pc-navmenu .hover:first-child {
   color: black;
   text-decoration: underline;
   margin-left: none; }
@@ -215,18 +215,20 @@ nav li:first-child {
 
 @media screen and (max-width: 959px) {
   .target_inner_3 {
-    top: 13px; } }
+    top: 13px;
+    width: 60%; } }
 
 .ham-menu {
   display: none; }
 @media screen and (max-width: 959px) {
   .ham-menu {
     display: block;
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100vh;
+    top: 0;
     left: -100%;
-    background: #636363;
+    background: rgba(99, 99, 99, 0.95);
     transition: 1.5s;
     -webkit-transition: 1.5s;
     z-index: 1; } }
@@ -252,6 +254,7 @@ a {
   transform: translateX(100%); }
 
 .linea, .lineb, .linec {
+  z-index: 2;
   background: #ffffff; }
 @media screen and (max-width: 600px) {
   .linea, .lineb, .linec {
