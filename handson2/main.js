@@ -1,45 +1,4 @@
-// 'use strict';
 
-// {
-//     const open = document.getElementById('open')
-//     const overlay = document.querySelector('.ham')
-//     const close = document.getElementById('close')
-//     const mnclose = document.getElementById('mn-close')
-//     const cpclose = document.getElementById('cp-close')
-//     const acclose = document.getElementById('ac-close')
-//     const rsclose = document.getElementById('rs-close')
-
-
-//     open.addEventListener('click', () => {
-//         overlay.classList.add('show');
-//         open.classList.add('hide');
-//     });
-
-//     close.addEventListener('click', () => {
-//         overlay.classList.remove('show');
-//         open.classList.remove('hide');
-//     });
-
-//     mnclose.addEventListener('click', () => {
-//         overlay.classList.remove('show');
-//         open.classList.remove('hide');
-//     });
-
-//     cpclose.addEventListener('click', () => {
-//         overlay.classList.remove('show');
-//         open.classList.remove('hide');
-//     });
-
-//     acclose.addEventListener('click', () => {
-//         overlay.classList.remove('show');
-//         open.classList.remove('hide');
-//     });
-
-//     rsclose.addEventListener('click', () => {
-//         overlay.classList.remove('show');
-//         open.classList.remove('hide');
-//     });
-// }
 
 function hamburger() {
     document.getElementById('line1').classList.toggle('linea');
@@ -58,5 +17,24 @@ let list = document.getElementsByClassName('list');
 for (let i = 0; i < list.length; i++) {
     list[i].addEventListener('click', function () {
         hamburger();
+    });
+}
+
+
+//スムーズスクロール実装
+const smoothScrollTrigger = document.querySelectorAll('a[href^="#"]');
+for (let i = 0; i < smoothScrollTrigger.length; i++) {
+    smoothScrollTrigger[i].addEventListener('click', (e) => {
+        e.preventDefault();
+        let href = smoothScrollTrigger[i].getAttribute('href');
+        let targetElement = document.getElementById(href.replace('#', ''));
+        const rect = targetElement.getBoundingClientRect().top;
+        const offset = window.pageYOffset;
+        const gap = 0
+        const target = rect + offset - gap;
+        window.scrollTo({
+            top: target,
+            behavior: 'smooth',
+        });
     });
 }

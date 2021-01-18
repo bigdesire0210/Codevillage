@@ -148,15 +148,17 @@ header {
     font-size: 2.2rem;
     letter-spacing: 2.2px; } }
 
+.hover:hover {
+  text-shadow: 3px 3px 3px gray;
+  cursor: pointer; }
+
+.hover {
+  margin-left: 20px; }
+
 .pc-navmenu {
   font-size: 1.8rem;
   width: 30%;
   letter-spacing: 1.8px; }
-
-.hover:hover {
-  background-color: white;
-  cursor: pointer; }
-
 @media screen and (max-width: 959px) {
   .pc-navmenu {
     display: none; } }
@@ -241,13 +243,8 @@ header {
   height: calc(100vh/5);
   line-height: 187.39px;
   list-style-type: none;
-  font-size: 5rem;
+  font-size: 3rem;
   text-align: center; }
-
-a {
-  display: block;
-  text-decoration: none;
-  color: white; }
 
 .fadein {
   -webkit-transform: translateX(100%);
